@@ -1,0 +1,6 @@
+com\gestionpedidos\igu\VerPedidoRestaurante.class
+com\gestionpedidos\logica\Controladora.class
+com\gestionpedidos\GestionPedidosAlimentos.class
+com\gestionpedidos\igu\CrearPedidoRestaurante.class
+com\gestionpedidos\igu\PrincipalRestaurante.class
+com\gestionpedidos\logica\Pedido.class
