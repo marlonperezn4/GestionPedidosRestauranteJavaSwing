@@ -131,7 +131,7 @@ public class CrearPedidoRestaurante extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("FORMULARIO");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\redimensionlamolinacrearpedido.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/redimensionlamolinacrearpedido.png"))); // NOI18N
         jLabel2.setText("jLabel2");
 
         jLabel3.setText("Nombre Plato");

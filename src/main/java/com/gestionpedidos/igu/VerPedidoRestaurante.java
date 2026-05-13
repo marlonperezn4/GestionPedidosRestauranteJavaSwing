@@ -90,7 +90,7 @@ public class VerPedidoRestaurante extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblPedidos);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\redimensionlamolinalistarpedidos.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/redimensionlamolinalistarpedidos.png"))); // NOI18N
         jLabel2.setText("jLabel2");
 
         btnCancelarPedido.setText("CANCELAR PEDIDO");
@@ -112,8 +112,7 @@ public class VerPedidoRestaurante extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnMenu)
                         .addGap(18, 18, 18)
-                        .addComponent(btnCrearPedido)
-                        .addGap(18, 18, 18))
+                        .addComponent(btnCrearPedido))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -122,7 +121,8 @@ public class VerPedidoRestaurante extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(106, 106, 106)
                                 .addComponent(btnCancelarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
