@@ -76,6 +76,7 @@ public class VerPedidoRestaurante extends javax.swing.JFrame {
         btnCancelarPedido = new javax.swing.JButton();
         btnMenu = new javax.swing.JButton();
         btnCrearPedido = new javax.swing.JButton();
+        btnExportarPedidos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,26 +105,29 @@ public class VerPedidoRestaurante extends javax.swing.JFrame {
         btnCrearPedido.setText("Crear Pedido");
         btnCrearPedido.addActionListener(this::btnCrearPedidoActionPerformed);
 
+        btnExportarPedidos.setText("EXPORTAR PEDIDOS");
+        btnExportarPedidos.addActionListener(this::btnExportarPedidosActionPerformed);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnMenu)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCrearPedido))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnExportarPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCancelarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(106, 106, 106)
-                                .addComponent(btnCancelarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(btnMenu)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCrearPedido)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -137,7 +141,9 @@ public class VerPedidoRestaurante extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCancelarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExportarPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCrearPedido)
@@ -201,10 +207,35 @@ public class VerPedidoRestaurante extends javax.swing.JFrame {
             "Pedido eliminado");
     }//GEN-LAST:event_btnCancelarPedidoActionPerformed
 
+    private void btnExportarPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarPedidosActionPerformed
+        // TODO add your handling code here:
+        Controladora control = new Controladora();
+
+        System.out.println("===== LISTA DE PEDIDOS =====");
+
+        for(Pedido pedido : control.traerPedidos()){
+
+            System.out.println(
+                    "Plato: " + pedido.getNombrePlato()
+                    + " | Categoría: " + pedido.getCategoria()
+                    + " | Cantidad: " + pedido.getCantidad()
+                    + " | Entrega: " + pedido.getMetodoEntrega()
+                    + " | Dirección: " + pedido.getDireccion()
+            );
+        }
+
+        System.out.println("============================");
+
+        JOptionPane.showMessageDialog(this,
+            "Pedidos exportados en consola");
+
+    }//GEN-LAST:event_btnExportarPedidosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarPedido;
     private javax.swing.JButton btnCrearPedido;
+    private javax.swing.JButton btnExportarPedidos;
     private javax.swing.JButton btnMenu;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
