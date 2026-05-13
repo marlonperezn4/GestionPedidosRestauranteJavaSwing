@@ -95,6 +95,9 @@ public class CrearPedidoRestaurante extends javax.swing.JFrame {
      */
     public CrearPedidoRestaurante() {
         initComponents();
+
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     /**

@@ -17,6 +17,8 @@ public class PrincipalRestaurante extends javax.swing.JFrame {
      */
     public PrincipalRestaurante() {
         initComponents();
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     /**

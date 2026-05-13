@@ -23,6 +23,8 @@ public class VerPedidoRestaurante extends javax.swing.JFrame {
     public VerPedidoRestaurante() {
         initComponents();
         cargarTabla();
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
     
     private void cargarTabla(){
